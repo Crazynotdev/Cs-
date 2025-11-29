@@ -32,7 +32,10 @@ const pairingLimiter = rateLimit({
 app.use('/api/pairing', pairingLimiter);
 
 // Route racine simple (ne renvoie pas la page HTML)
-app.get('/', (req, res) => res.send('crazy-mini backend API 🟢'));
+//****app.get('/', (req, res) => res.send('crazy-mini backend API 🟢'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages', 'index.html'));
+});
 
 // Middleware de gestion des erreurs
 app.use((err, req, res, next) => {

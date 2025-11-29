@@ -1,0 +1,29 @@
+{
+  "name": "crazy-mini",
+  "version": "1.0.0",
+  "description": "SaaS Platform for WhatsApp Pairing Code Bot with Baileys",
+  "main": "crazy/app.js",
+  "scripts": {
+    "start": "node crazy/app.js",
+    "dev": "nodemon crazy/app.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "pairing",
+    "baileys",
+    "express",
+    "saas"
+  ],
+  "author": "Crazynotdev",
+  "license": "MIT",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,16 +1,27 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const morgan = require('morgan');
 const routes = require('./routes');
 const path = require('path');
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+// Sécurité + logging
+app.use(helmet());
+app.use(cors({ origin: '*' }));
+app.use(express.json({ limit: '1mb' }));
+app.use(morgan('tiny'));
+
+// Routes API
 app.use('/api', routes);
 
+// Sessions statiques
 app.use('/sessions', express.static(path.join(__dirname, 'data/sessions')));
+
+// Pages statiques (ne sert pas sur /)
+app.use('/pages', express.static(path.join(__dirname, 'pages')));
 
 // Sécurité : rate limit API pairing
 const pairingLimiter = rateLimit({
@@ -20,7 +31,14 @@ const pairingLimiter = rateLimit({
 });
 app.use('/api/pairing', pairingLimiter);
 
+// Route racine simple (ne renvoie pas la page HTML)
 app.get('/', (req, res) => res.send('crazy-mini backend API 🟢'));
+
+// Middleware de gestion des erreurs
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Erreur serveur' });
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

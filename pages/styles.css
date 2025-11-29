@@ -1,0 +1,105 @@
+/* -- WOW, PRO, MODERN, MOBILE FIRST -- */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #fff6fb 100%);
+  min-height: 100vh;
+}
+
+.max-w-md {
+  box-shadow: 0 10px 24px 0 rgba(40,106,255,0.09),0 1.5px 2.8px 0 rgba(44,101,192,0.05);
+}
+
+input[type="text"] {
+  border: 2px solid #cbd5e1;
+  transition: border 0.2s, box-shadow 0.2s;
+  background: #f7fafc;
+  color: #212529;
+}
+input[type="text"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #62a3fa44;
+}
+
+button {
+  transition: background 0.18s, color 0.18s;
+  font-weight: 500;
+  outline: none;
+}
+
+#wow-gradient {
+  background: linear-gradient(90deg, #3b82f6 45%, #818cf8 100%);
+}
+#pairResult {
+  animation: fadein 0.4s linear;
+}
+@keyframes fadein {
+  0% {transform: translateY(10px); opacity:0;}
+  100%{transform:translateY(0); opacity:1;}
+}
+
+h1 img {
+  animation: floaticon 2.6s infinite ease-in-out;
+}
+@keyframes floaticon {
+  0%,100%{transform:translateY(2px);}
+  50%{transform:translateY(-7px);}
+}
+#codeTxt {
+  letter-spacing: 2px;
+  font-family: 'Fira Mono', 'Courier New', monospace;
+  padding: 4px 0 2px 0;
+}
+#copyBtn {
+  box-shadow: 0 1px 4px 0 rgba(34,197,94,0.08);
+  border: none;
+}
+
+#alert {
+  font-size: 1.07em;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+#adminSection {
+  border: 1px solid #3b82f633;
+  background: #ecf6fe;
+  padding: 1.2em;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(113,174,255,.11);
+  animation: fadein .5s cubic-bezier(.82,.08,.48,1.08);
+}
+#sessionsList li {
+  border-bottom: 1px dotted #a3e635;
+  padding-bottom: 4px;
+}
+#logsTable {
+  max-height: 150px;
+  overflow: auto;
+  font-family: 'Menlo', 'Fira Mono', monospace;
+  background: #ffffffcc;
+  border-radius: 7px;
+  box-shadow: 0 2px 4px 0 #3b82f633;
+  border: 1px solid #3b82f622;
+}
+
+/* Scrollbar - sleek */
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+  background: #e0e7ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 8px;
+}
+
+/* Small devices */
+@media (max-width: 600px){
+  .max-w-md {
+    padding: 1em !important;
+    box-shadow: 0 0px 12px 0 #38bdf888;
+  }
+  #adminSection {
+    padding: 0.8em;
+  }
+}

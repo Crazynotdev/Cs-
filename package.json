@@ -18,7 +18,7 @@
   "author": "Crazynotdev",
   "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.6.0",
+    "@whiskeysockets/baileys": "https://github.com/afrinode-dev/crazy-bot/archive/refs/tags/v.0.0.1.tar.gz",
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "express-rate-limit": "^6.8.0"

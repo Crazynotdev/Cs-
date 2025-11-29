@@ -1,5 +1,5 @@
 const express = require('express');
-const { requestPairingCode, startSession } = require('./baileys');
+const { requestPairingCode, startSession } = require('./crazy');
 const { saveSession, getSessions } = require('./sessionStore');
 const { logEvent, getLogs } = require('./log');
 const router = express.Router();
